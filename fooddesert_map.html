@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_84d99aa356e4846a75be350ac7ee7d92 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; bottom: 40px; left: 40px; z-index: 1000;
+     background-color: white; padding: 12px; border-radius: 8px;
+     border: 2px solid grey; font-family: Arial; font-size: 13px;">
+    <b>NYC Food Desert Map</b><br><br>
+    <span style="color:#e74c3c;">&#9679;</span> Food Desert<br>
+    <span style="color:#2ecc71;">&#9679;</span> Non-Food Desert<br><br>
+    <i>Click a neighborhood for details</i>
+</div>
+    
+            <div class="folium-map" id="map_84d99aa356e4846a75be350ac7ee7d92" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_84d99aa356e4846a75be350ac7ee7d92 = L.map(
+                "map_84d99aa356e4846a75be350ac7ee7d92",
+                {
+                    center: [40.7308, -73.9352],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0e9c2da49002870245a2afcc813a1a35 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0e9c2da49002870245a2afcc813a1a35.addTo(map_84d99aa356e4846a75be350ac7ee7d92);
+        
+    
+        function geo_json_a67fed7a45e55597c29a6fa0f2db29ae_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "white", "fillColor": "#e74c3c", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_a67fed7a45e55597c29a6fa0f2db29ae_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_a67fed7a45e55597c29a6fa0f2db29ae = L.geoJson(null, {
+                onEachFeature: geo_json_a67fed7a45e55597c29a6fa0f2db29ae_onEachFeature,
+            
+                style: geo_json_a67fed7a45e55597c29a6fa0f2db29ae_styler,
+            ...{
+}
+        });
+
+        function geo_json_a67fed7a45e55597c29a6fa0f2db29ae_add (data) {
+            geo_json_a67fed7a45e55597c29a6fa0f2db29ae
+                .addData(data);
+        }
+            geo_json_a67fed7a45e55597c29a6fa0f2db29ae_add({"features": [{"geometry": {"coordinates": [[[-73.93213126627553, 40.869450652750444], [-73.93127671033326, 40.86884361367126], [-73.93453048454519, 40.86319804411761], [-73.93378898818895, 40.863071872995604], [-73.93484111974497, 40.861457552123454], [-73.93524365776949, 40.86012437965909], [-73.93567259775875, 40.85962974162257], [-73.93655167726502, 40.85909503631643], [-73.937688907185, 40.85765175547473], [-73.93657612012709, 40.85735053108442], [-73.93795332222744, 40.855569573191495], [-73.93778769142585, 40.85537404141855], [-73.93355655605933, 40.85414224518565], [-73.92815115747896, 40.851863350802304], [-73.92769565158058, 40.852487812004014], [-73.92706993465309, 40.852180831357444], [-73.9270363205077, 40.851616779926935], [-73.92759675459841, 40.850513638834265], [-73.92887662242559, 40.84939404108911], [-73.92972702545423, 40.848177924419836], [-73.93062108080143, 40.84848099946699], [-73.9308842989222, 40.848118956988955], [-73.92848076688256, 40.84698296784975], [-73.92982993605106, 40.845045046703326], [-73.93149099341204, 40.845738235003054], [-73.93150252659382, 40.845296027019955], [-73.93240550181383, 40.844838179179284], [-73.93294766814695, 40.84420971481019], [-73.93328518693878, 40.84411381171962], [-73.93371553818378, 40.84424639804946], [-73.93467106288998, 40.84295727251731], [-73.94260999216223, 40.84623030132907], [-73.9420539434263, 40.84831675486505], [-73.9413764439321, 40.84886059703847], [-73.9415250644368, 40.84928192353945], [-73.94261461299337, 40.84963960129212], [-73.9425813459346, 40.84973530162672], [-73.94688156239715, 40.8505756143882], [-73.94652226898951, 40.85097125952732], [-73.94625670323292, 40.8509383257984], [-73.9461309196999, 40.85117950795217], [-73.94563524825244, 40.85125275374769], [-73.94465859315926, 40.851939419386305], [-73.94433312245029, 40.851847017338486], [-73.94346457759225, 40.85230711173937], [-73.94201510404143, 40.85370952809815], [-73.94028078276583, 40.8566499011432], [-73.93901057396258, 40.85815000531262], [-73.93836114276391, 40.85931066891446], [-73.93752975865353, 40.860103714963984], [-73.93757708419854, 40.860234765519], [-73.93653401311734, 40.861838425108346], [-73.93406287907484, 40.864986425036584], [-73.93245148791947, 40.867524411011495], [-73.93209614681545, 40.86848635612702], [-73.9322806376585, 40.86853411212009], [-73.93231397584677, 40.86892258821232], [-73.93256485663345, 40.86901675604818], [-73.93213126627553, 40.869450652750444]]], "type": "Polygon"}, "id": 50, "properties": {"@id": "http://nyc.pediacities.com/Resource/PostalCode/10033", "BLDGpostalCode": 0, "CTY_FIPS": "061", "OBJECTID": 51, "PO_NAME": "New York", "STATE": "NY", "ST_FIPS": "36", "Shape_Area": 16156054.1726, "Shape_Leng": 29415.6071226, "borough": "Manhattan", "postalCode": "10033"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_a67fed7a45e55597c29a6fa0f2db29ae.bindTooltip(
+                `<div>
+                     Washington Heights (Food Desert) — ZIP 10033
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_c66cc7cdb8d58352f9a9827c23c72dd8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ec5b943a2191c801dfbe12ec5c48ae09 = $(`<div id="html_ec5b943a2191c801dfbe12ec5c48ae09" style="width: 100.0%; height: 100.0%;"><div style='font-family: Arial; width: 220px;'><h4 style='margin-bottom:5px;'>Washington Heights</h4><b>ZIP Code:</b> 10033<br><hr style='margin:4px 0'><b>Food Desert:</b> Yes<br><b>Population:</b> 109,190<br><b>Median Income:</b> $66,086<br><b>Poverty Rate:</b> 18.2%<br><b>Grocery Stores:</b> 23<br><b>Fast Food:</b> 33<br><b>Grocery/FastFood Ratio:</b> 0.7<br><b>Avg Google Rating:</b> 4.22 stars<br><b>Total Arrests:</b> 5,903<br><b>Arrests per 10k:</b> 540.6<br><b>% Grade A Inspections:</b> 93.0%</div></div>`)[0];
+                popup_c66cc7cdb8d58352f9a9827c23c72dd8.setContent(html_ec5b943a2191c801dfbe12ec5c48ae09);
+            
+        
+
+        geo_json_a67fed7a45e55597c29a6fa0f2db29ae.bindPopup(popup_c66cc7cdb8d58352f9a9827c23c72dd8)
+        ;
+
+        
+    
+    
+            geo_json_a67fed7a45e55597c29a6fa0f2db29ae.addTo(map_84d99aa356e4846a75be350ac7ee7d92);
+        
+    
+        function geo_json_47ce6557ec4e6578a7209c43e6eb7e7a_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "white", "fillColor": "#e74c3c", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_47ce6557ec4e6578a7209c43e6eb7e7a_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_47ce6557ec4e6578a7209c43e6eb7e7a = L.geoJson(null, {
+                onEachFeature: geo_json_47ce6557ec4e6578a7209c43e6eb7e7a_onEachFeature,
+            
+                style: geo_json_47ce6557ec4e6578a7209c43e6eb7e7a_styler,
+            ...{
+}
+        });
+
+        function geo_json_47ce6557ec4e6578a7209c43e6eb7e7a_add (data) {
+            geo_json_47ce6557ec4e6578a7209c43e6eb7e7a
+                .addData(data);
+        }
+            geo_json_47ce6557ec4e6578a7209c43e6eb7e7a_add({"features": [{"geometry": {"coordinates": [[[-73.94691631035546, 40.85053396462935], [-73.9425813459346, 40.84973530162672], [-73.94261461299337, 40.84963960129212], [-73.9415250644368, 40.84928192353945], [-73.9413764439321, 40.84886059703847], [-73.9420539434263, 40.84831675486505], [-73.94260999216223, 40.84623030132907], [-73.93485106064718, 40.84301477264741], [-73.93467106288998, 40.84295727251731], [-73.93371553818378, 40.84424639804946], [-73.93299195446892, 40.84418408460361], [-73.93240550181383, 40.844838179179284], [-73.9315279064619, 40.8452705293293], [-73.93149099341204, 40.845738235003054], [-73.92982993605106, 40.845045046703326], [-73.93088993208328, 40.8424779202543], [-73.93439575536135, 40.83610394068545], [-73.93440160458212, 40.836469017808476], [-73.93506980371573, 40.83567357256877], [-73.93855748620817, 40.83291832007009], [-73.9399124624082, 40.83092734327202], [-73.9400877390704, 40.83034967785467], [-73.94107858204309, 40.82908318828013], [-73.94971383646286, 40.83269649150552], [-73.94852105078529, 40.83634866699097], [-73.94917082807663, 40.83668014333772], [-73.95035333237948, 40.83270690183203], [-73.95119152647304, 40.830482220167625], [-73.95218696274918, 40.82892668637683], [-73.9534708521888, 40.827525921315825], [-73.9545418790166, 40.82786149839284], [-73.9511691024042, 40.83265118172919], [-73.95091399534284, 40.83330463429175], [-73.95015909125742, 40.834384172504045], [-73.94954196093035, 40.836609539186945], [-73.94916704996425, 40.83668873778727], [-73.94954429666501, 40.83688311385108], [-73.94882846127585, 40.8389157386598], [-73.94738278950409, 40.84194047114247], [-73.94613038088204, 40.843950834255715], [-73.94623482148211, 40.84539193331183], [-73.94655744115931, 40.84598305846326], [-73.94635643102687, 40.84622629353009], [-73.94682911293692, 40.8470636911263], [-73.94664694075595, 40.848136792028676], [-73.9466763281312, 40.84896569956346], [-73.94705147325554, 40.85023681853292], [-73.94691631035546, 40.85053396462935]]], "type": "Polygon"}, "id": 60, "properties": {"@id": "http://nyc.pediacities.com/Resource/PostalCode/10032", "BLDGpostalCode": 0, "CTY_FIPS": "061", "OBJECTID": 61, "PO_NAME": "New York", "STATE": "NY", "ST_FIPS": "36", "Shape_Area": 23159566.0919, "Shape_Leng": 31657.9250475, "borough": "Manhattan", "postalCode": "10032"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_47ce6557ec4e6578a7209c43e6eb7e7a.bindTooltip(
+                `<div>
+                     Washington Heights (Food Desert) — ZIP 10032
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_9c24dad7d43da924826632d1b7f5b18c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_379cb10e2b4a362f9d8903997ecd08dd = $(`<div id="html_379cb10e2b4a362f9d8903997ecd08dd" style="width: 100.0%; height: 100.0%;"><div style='font-family: Arial; width: 220px;'><h4 style='margin-bottom:5px;'>Washington Heights</h4><b>ZIP Code:</b> 10032<br><hr style='margin:4px 0'><b>Food Desert:</b> Yes<br><b>Population:</b> 109,190<br><b>Median Income:</b> $66,086<br><b>Poverty Rate:</b> 18.2%<br><b>Grocery Stores:</b> 23<br><b>Fast Food:</b> 33<br><b>Grocery/FastFood Ratio:</b> 0.7<br><b>Avg Google Rating:</b> 4.22 stars<br><b>Total Arrests:</b> 5,903<br><b>Arrests per 10k:</b> 540.6<br><b>% Grade A Inspections:</b> 93.0%</div></div>`)[0];
+                popup_9c24dad7d43da924826632d1b7f5b18c.setContent(html_379cb10e2b4a362f9d8903997ecd08dd);
+            
+        
+
+        geo_json_47ce6557ec4e6578a7209c43e6eb7e7a.bindPopup(popup_9c24dad7d43da924826632d1b7f5b18c)
+        ;
+
+        
+    
+    
+            geo_json_47ce6557ec4e6578a7209c43e6eb7e7a.addTo(map_84d99aa356e4846a75be350ac7ee7d92);
+        
+    
+        function geo_json_f64c86c069253d49236fe65e2f3b5afa_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "white", "fillColor": "#e74c3c", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_f64c86c069253d49236fe65e2f3b5afa_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_f64c86c069253d49236fe65e2f3b5afa = L.geoJson(null, {
+                onEachFeature: geo_json_f64c86c069253d49236fe65e2f3b5afa_onEachFeature,
+            
+                style: geo_json_f64c86c069253d49236fe65e2f3b5afa_styler,
+            ...{
+}
+        });
+
+        function geo_json_f64c86c069253d49236fe65e2f3b5afa_add (data) {
+            geo_json_f64c86c069253d49236fe65e2f3b5afa
+                .addData(data);
+        }
+            geo_json_f64c86c069253d49236fe65e2f3b5afa_add({"features": [{"geometry": {"coordinates": [[[-73.93293579565668, 40.827724561262286], [-73.93311365908062, 40.82815279425892], [-73.93096438607371, 40.82835233359979], [-73.92968227038422, 40.82871379487919], [-73.93103678392244, 40.829639709525765], [-73.92990283464644, 40.82995643775951], [-73.92713355145005, 40.82821103296855], [-73.92404682541348, 40.8272439479143], [-73.92241309948928, 40.830052563277604], [-73.91964222728834, 40.829113606925], [-73.92020143339224, 40.82809982586024], [-73.91461050893973, 40.826294535013176], [-73.91211594116584, 40.827885972661136], [-73.91194860236519, 40.827835474895366], [-73.91127397045084, 40.829101492957385], [-73.91030770499657, 40.82877250411782], [-73.91169430267045, 40.82775873382422], [-73.91179361330045, 40.82642818162548], [-73.9113064353643, 40.82484260023421], [-73.90870858035929, 40.824066660415184], [-73.90963704963323, 40.82261805744466], [-73.90953288060507, 40.822309273905525], [-73.91061208471453, 40.819223793095176], [-73.91304674876675, 40.82015421282985], [-73.91741656261301, 40.82127727741208], [-73.92034893087636, 40.8146288822998], [-73.92644365596114, 40.81150660841546], [-73.9272232244666, 40.811038428234276], [-73.9271913789268, 40.81086241571954], [-73.92813462089917, 40.80962158371083], [-73.92880616854771, 40.80989911693504], [-73.93062294842971, 40.80850914493453], [-73.9317564471804, 40.80793457778949], [-73.93245010764808, 40.80887302360745], [-73.93256668529217, 40.80962507530394], [-73.93223343502545, 40.80992942473122], [-73.93274485292682, 40.810036308949485], [-73.93287327440493, 40.81034453059341], [-73.93258294021298, 40.81091176220656], [-73.93263501410694, 40.811703078970815], [-73.93250314608784, 40.811775500017504], [-73.9323569873176, 40.813248886012865], [-73.93229986510782, 40.81342484841902], [-73.93210320951746, 40.81331025973406], [-73.93201235552432, 40.81341822267112], [-73.93244171534809, 40.81374331691181], [-73.93233196033289, 40.81463107632666], [-73.93166012536861, 40.81473183293259], [-73.93169986420865, 40.814942471089225], [-73.93227402446446, 40.81496011103421], [-73.93235410493742, 40.815400219336766], [-73.93223730702354, 40.81738879494064], [-73.93206018568213, 40.81804376075479], [-73.93223542711458, 40.81809771448805], [-73.93237788540343, 40.81930174241836], [-73.93217759907007, 40.81999231646315], [-73.93231498273117, 40.821250630232186], [-73.93166395217517, 40.821471074960826], [-73.93174285606761, 40.82158965852502], [-73.93231867291973, 40.82157334686326], [-73.93233990892412, 40.82213533832113], [-73.93164254329328, 40.82226132337151], [-73.9315944661707, 40.8224239469831], [-73.93162922031186, 40.82254896186447], [-73.93233364105305, 40.822544053647185], [-73.93242816708616, 40.822667618425776], [-73.93235969692475, 40.823426002184725], [-73.93251459507913, 40.824079004741286], [-73.93182599481176, 40.82415040163667], [-73.93186279133784, 40.824560456077606], [-73.9325878144022, 40.82452671018362], [-73.93263422881698, 40.825148443208434], [-73.93192603207754, 40.8251858769536], [-73.93194587207792, 40.82550073528859], [-73.93246459074531, 40.82547671605434], [-73.93245820648485, 40.82691382404195], [-73.93266781537824, 40.8269297251003], [-73.93252819947382, 40.82769454502442], [-73.93293579565668, 40.827724561262286]]], "type": "Polygon"}, "id": 67, "properties": {"@id": "http://nyc.pediacities.com/Resource/PostalCode/10451", "BLDGpostalCode": 0, "CTY_FIPS": "005", "OBJECTID": 68, "PO_NAME": "Bronx", "STATE": "NY", "ST_FIPS": "36", "Shape_Area": 28944106.5181, "Shape_Leng": 32573.9144378, "borough": "Bronx", "postalCode": "10451"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_f64c86c069253d49236fe65e2f3b5afa.bindTooltip(
+                `<div>
+                     South Bronx (Food Desert) — ZIP 10451
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_5976757f21d48bc5394278290bdd3507 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3ce8d4d727596443f5e5bb88c78ea417 = $(`<div id="html_3ce8d4d727596443f5e5bb88c78ea417" style="width: 100.0%; height: 100.0%;"><div style='font-family: Arial; width: 220px;'><h4 style='margin-bottom:5px;'>South Bronx</h4><b>ZIP Code:</b> 10451<br><hr style='margin:4px 0'><b>Food Desert:</b> Yes<br><b>Population:</b> 132,283<br><b>Median Income:</b> $33,771<br><b>Poverty Rate:</b> 35.5%<br><b>Grocery Stores:</b> 26<br><b>Fast Food:</b> 52<br><b>Grocery/FastFood Ratio:</b> 0.5<br><b>Avg Google Rating:</b> 4.19 stars<br><b>Total Arrests:</b> 18,237<br><b>Arrests per 10k:</b> 1378.6<br><b>% Grade A Inspections:</b> 94.7%</div></div>`)[0];
+                popup_5976757f21d48bc5394278290bdd3507.setContent(html_3ce8d4d727596443f5e5bb88c78ea417);
+            
+        
+
+        geo_json_f64c86c069253d49236fe65e2f3b5afa.bindPopup(popup_5976757f21d48bc5394278290bdd3507)
+        ;
+
+        
+    
+    
+            geo_json_f64c86c069253d49236fe65e2f3b5afa.addTo(map_84d99aa356e4846a75be350ac7ee7d92);
+        
+    
+        function geo_json_804fa4b0c27d1eaa791b4cb38d2b94a7_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "white", "fillColor": "#e74c3c", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_804fa4b0c27d1eaa791b4cb38d2b94a7_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_804fa4b0c27d1eaa791b4cb38d2b94a7 = L.geoJson(null, {
+                onEachFeature: geo_json_804fa4b0c27d1eaa791b4cb38d2b94a7_onEachFeature,
+            
+                style: geo_json_804fa4b0c27d1eaa791b4cb38d2b94a7_styler,
+            ...{
+}
+        });
+
+        function geo_json_804fa4b0c27d1eaa791b4cb38d2b94a7_add (data) {
+            geo_json_804fa4b0c27d1eaa791b4cb38d2b94a7
+                .addData(data);
+        }
+            geo_json_804fa4b0c27d1eaa791b4cb38d2b94a7_add({"features": [{"geometry": {"coordinates": [[[-73.90337473066617, 40.818783819487955], [-73.90160120929121, 40.819694882330374], [-73.90166320790993, 40.81953184533151], [-73.89498559710309, 40.81558051388226], [-73.89642303306304, 40.81420115315295], [-73.89529171263543, 40.81355858873168], [-73.8963583781087, 40.812309626276196], [-73.89725562257286, 40.81267857183607], [-73.89985898713485, 40.810239990301305], [-73.90156701477514, 40.80772301294962], [-73.90147799924728, 40.806776001304115], [-73.8984500615656, 40.8053943174222], [-73.9009478826327, 40.80485448931791], [-73.90208490812404, 40.80478179265004], [-73.90224022390369, 40.804933241620624], [-73.90307457067233, 40.8098806265592], [-73.90496022777906, 40.80853161187961], [-73.91036523392276, 40.80964525942633], [-73.90959635484278, 40.8117767810278], [-73.91022111681971, 40.811912711318385], [-73.91094778798086, 40.81362093836451], [-73.91295449382221, 40.81426935769501], [-73.91447425155131, 40.81165126686078], [-73.91798334769986, 40.812812880591345], [-73.9212111620155, 40.81417382212535], [-73.92034893087636, 40.8146288822998], [-73.91741656261301, 40.82127727741208], [-73.91304674876675, 40.82015421282985], [-73.91042954253814, 40.81916144961969], [-73.90531286970605, 40.8179242793546], [-73.90337473066617, 40.818783819487955]]], "type": "Polygon"}, "id": 72, "properties": {"@id": "http://nyc.pediacities.com/Resource/PostalCode/10455", "BLDGpostalCode": 0, "CTY_FIPS": "005", "OBJECTID": 73, "PO_NAME": "Bronx", "STATE": "NY", "ST_FIPS": "36", "Shape_Area": 19846918.841, "Shape_Leng": 26037.9379591, "borough": "Bronx", "postalCode": "10455"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_804fa4b0c27d1eaa791b4cb38d2b94a7.bindTooltip(
+                `<div>
+                     South Bronx (Food Desert) — ZIP 10455
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_d1af1d195ef72e6959946a5129fd8cef = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a529e49ff8586561808c3438690c7438 = $(`<div id="html_a529e49ff8586561808c3438690c7438" style="width: 100.0%; height: 100.0%;"><div style='font-family: Arial; width: 220px;'><h4 style='margin-bottom:5px;'>South Bronx</h4><b>ZIP Code:</b> 10455<br><hr style='margin:4px 0'><b>Food Desert:</b> Yes<br><b>Population:</b> 132,283<br><b>Median Income:</b> $33,771<br><b>Poverty Rate:</b> 35.5%<br><b>Grocery Stores:</b> 26<br><b>Fast Food:</b> 52<br><b>Grocery/FastFood Ratio:</b> 0.5<br><b>Avg Google Rating:</b> 4.19 stars<br><b>Total Arrests:</b> 18,237<br><b>Arrests per 10k:</b> 1378.6<br><b>% Grade A Inspections:</b> 94.7%</div></div>`)[0];
+                popup_d1af1d195ef72e6959946a5129fd8cef.setContent(html_a529e49ff8586561808c3438690c7438);
+            
+        
+
+        geo_json_804fa4b0c27d1eaa791b4cb38d2b94a7.bindPopup(popup_d1af1d195ef72e6959946a5129fd8cef)
+        ;
+
+        
+    
+    
+            geo_json_804fa4b0c27d1eaa791b4cb38d2b94a7.addTo(map_84d99aa356e4846a75be350ac7ee7d92);
+        
+    
+        function geo_json_6c2440571c9bac65019a3dab9608677d_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "white", "fillColor": "#e74c3c", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_6c2440571c9bac65019a3dab9608677d_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_6c2440571c9bac65019a3dab9608677d = L.geoJson(null, {
+                onEachFeature: geo_json_6c2440571c9bac65019a3dab9608677d_onEachFeature,
+            
+                style: geo_json_6c2440571c9bac65019a3dab9608677d_styler,
+            ...{
+}
+        });
+
+        function geo_json_6c2440571c9bac65019a3dab9608677d_add (data) {
+            geo_json_6c2440571c9bac65019a3dab9608677d
+                .addData(data);
+        }
+            geo_json_6c2440571c9bac65019a3dab9608677d_add({"features": [{"geometry": {"coordinates": [[[-73.96590008432324, 40.80880536649463], [-73.96689075082833, 40.80776451834099], [-73.96880711754392, 40.80442856683398], [-73.97134705168688, 40.800874529489015], [-73.97277743106588, 40.79972671810915], [-73.9738635800676, 40.798436239674814], [-73.97414359285979, 40.79776386384747], [-73.9741145153181, 40.796864758011104], [-73.97425532410232, 40.79658855857136], [-73.97572323866528, 40.795607654729636], [-73.9760258411193, 40.795216788568155], [-73.97626246137298, 40.79473546090477], [-73.97636767715618, 40.79368357423228], [-73.97709165633408, 40.792723582813835], [-73.96700976022309, 40.78847680965741], [-73.97357116577913, 40.77947788180905], [-73.97642746465422, 40.780654270730345], [-73.97690313877095, 40.77999737613274], [-73.97974787055291, 40.78119536260816], [-73.97928494580403, 40.78183902023342], [-73.98081059690513, 40.7824731961474], [-73.98106345484025, 40.78175075015363], [-73.98445219960307, 40.78319175363302], [-73.98265479533252, 40.784970606976074], [-73.9841922514499, 40.785616802690505], [-73.98470913747732, 40.785595702546885], [-73.98473705705575, 40.78504251482436], [-73.98516250169958, 40.7839982850751], [-73.9865652634212, 40.782064038410304], [-73.98768599278554, 40.78216290002316], [-73.98039128153972, 40.79280165603109], [-73.97208360515059, 40.804477453840406], [-73.96860102560335, 40.80902218301242], [-73.96411270880478, 40.815820174639875], [-73.96199929512878, 40.818130631467476], [-73.96067221902307, 40.81750429175458], [-73.96080172434088, 40.81711999754174], [-73.96049221119767, 40.816304561362045], [-73.96062298848261, 40.81574151726333], [-73.96197563381331, 40.81389455285185], [-73.96374596077916, 40.81186442047553], [-73.96590008432324, 40.80880536649463]]], "type": "Polygon"}, "id": 74, "properties": {"@id": "http://nyc.pediacities.com/Resource/PostalCode/10024", "BLDGpostalCode": 0, "CTY_FIPS": "061", "OBJECTID": 75, "PO_NAME": "New York", "STATE": "NY", "ST_FIPS": "36", "Shape_Area": 22877335.4506, "Shape_Leng": 40063.6709738, "borough": "Manhattan", "postalCode": "10024"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_6c2440571c9bac65019a3dab9608677d.bindTooltip(
+                `<div>
+                     Upper West Side (Food Desert) — ZIP 10024
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_7c5f4f934de15cd2e66d9b4c0d8edc85 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c90d785085735cd41bb5ca408b9372e3 = $(`<div id="html_c90d785085735cd41bb5ca408b9372e3" style="width: 100.0%; height: 100.0%;"><div style='font-family: Arial; width: 220px;'><h4 style='margin-bottom:5px;'>Upper West Side</h4><b>ZIP Code:</b> 10024<br><hr style='margin:4px 0'><b>Food Desert:</b> Yes<br><b>Population:</b> 130,044<br><b>Median Income:</b> $170,240<br><b>Poverty Rate:</b> 8.0%<br><b>Grocery Stores:</b> 26<br><b>Fast Food:</b> 37<br><b>Grocery/FastFood Ratio:</b> 0.7<br><b>Avg Google Rating:</b> 4.24 stars<br><b>Total Arrests:</b> 3,124<br><b>Arrests per 10k:</b> 240.2<br><b>% Grade A Inspections:</b> 94.2%</div></div>`)[0];
+                popup_7c5f4f934de15cd2e66d9b4c0d8edc85.setContent(html_c90d785085735cd41bb5ca408b9372e3);
+            
+        
+
+        geo_json_6c2440571c9bac65019a3dab9608677d.bindPopup(popup_7c5f4f934de15cd2e66d9b4c0d8edc85)
+        ;
+
+        
+    
+    
+            geo_json_6c2440571c9bac65019a3dab9608677d.addTo(map_84d99aa356e4846a75be350ac7ee7d92);
+        
+    
+        function geo_json_d9cb26a8cf0d693866dfb1f86a9155df_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "white", "fillColor": "#e74c3c", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_d9cb26a8cf0d693866dfb1f86a9155df_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_d9cb26a8cf0d693866dfb1f86a9155df = L.geoJson(null, {
+                onEachFeature: geo_json_d9cb26a8cf0d693866dfb1f86a9155df_onEachFeature,
+            
+                style: geo_json_d9cb26a8cf0d693866dfb1f86a9155df_styler,
+            ...{
+}
+        });
+
+        function geo_json_d9cb26a8cf0d693866dfb1f86a9155df_add (data) {
+            geo_json_d9cb26a8cf0d693866dfb1f86a9155df
+                .addData(data);
+        }
+            geo_json_d9cb26a8cf0d693866dfb1f86a9155df_add({"features": [{"geometry": {"coordinates": [[[-73.9317564471804, 40.80793457778949], [-73.93062294842971, 40.80850914493453], [-73.92880616854771, 40.80989911693504], [-73.92813462089917, 40.80962158371083], [-73.9271913789268, 40.81086241571954], [-73.9272232244666, 40.811038428234276], [-73.9212111620155, 40.81417382212535], [-73.91798334769986, 40.812812880591345], [-73.91447425155131, 40.81165126686078], [-73.91295449382221, 40.81426935769501], [-73.91094778798086, 40.81362093836451], [-73.91022111681971, 40.811912711318385], [-73.90959635484278, 40.8117767810278], [-73.91036523392276, 40.80964525942633], [-73.90496022777906, 40.80853161187961], [-73.90307457067233, 40.8098806265592], [-73.9021932110385, 40.80479898416427], [-73.90244072561018, 40.80442149217203], [-73.90320806421353, 40.80388782244981], [-73.903764151553, 40.80375209292379], [-73.90453556811724, 40.80316418426033], [-73.90757450496938, 40.799952036310245], [-73.90817625899794, 40.79938949059361], [-73.90843916774139, 40.79951966254794], [-73.90861465357715, 40.799343561399105], [-73.90823816920582, 40.79910013547807], [-73.9082908456194, 40.7989569583098], [-73.9109078907201, 40.79701708716078], [-73.91166880982979, 40.7966327513219], [-73.91395232494618, 40.796808934296735], [-73.92018708247443, 40.79946749008783], [-73.92077134923866, 40.80015322464397], [-73.92143101250711, 40.80138605823438], [-73.92299084796095, 40.80243364854197], [-73.92430416597533, 40.80253404247705], [-73.92670482229853, 40.802376644961896], [-73.92740226964288, 40.80262243809558], [-73.92767849866226, 40.802571697506494], [-73.9272807607111, 40.80321752835037], [-73.92741546598086, 40.80327366030461], [-73.92729308414934, 40.80347674836135], [-73.92753473836694, 40.80385787371083], [-73.92771987517568, 40.80401912701634], [-73.92827115459858, 40.80398206102566], [-73.92850364961397, 40.804195579564094], [-73.92871941299306, 40.80411795600238], [-73.93053961350294, 40.80649585955843], [-73.93050142983161, 40.80671776259958], [-73.9317564471804, 40.80793457778949]]], "type": "Polygon"}, "id": 75, "properties": {"@id": "http://nyc.pediacities.com/Resource/PostalCode/10454", "BLDGpostalCode": 0, "CTY_FIPS": "005", "OBJECTID": 76, "PO_NAME": "Bronx", "STATE": "NY", "ST_FIPS": "36", "Shape_Area": 31063613.3255, "Shape_Leng": 25984.0268411, "borough": "Bronx", "postalCode": "10454"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_d9cb26a8cf0d693866dfb1f86a9155df.bindTooltip(
+                `<div>
+                     South Bronx (Food Desert) — ZIP 10454
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_3ed1b9a2acde567d723d2dbac78a39db = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5ef0291e8c432ee23c8df15e85e81565 = $(`<div id="html_5ef0291e8c432ee23c8df15e85e81565" style="width: 100.0%; height: 100.0%;"><div style='font-family: Arial; width: 220px;'><h4 style='margin-bottom:5px;'>South Bronx</h4><b>ZIP Code:</b> 10454<br><hr style='margin:4px 0'><b>Food Desert:</b> Yes<br><b>Population:</b> 132,283<br><b>Median Income:</b> $33,771<br><b>Poverty Rate:</b> 35.5%<br><b>Grocery Stores:</b> 26<br><b>Fast Food:</b> 52<br><b>Grocery/FastFood Ratio:</b> 0.5<br><b>Avg Google Rating:</b> 4.19 stars<br><b>Total Arrests:</b> 18,237<br><b>Arrests per 10k:</b> 1378.6<br><b>% Grade A Inspections:</b> 94.7%</div></div>`)[0];
+                popup_3ed1b9a2acde567d723d2dbac78a39db.setContent(html_5ef0291e8c432ee23c8df15e85e81565);
+            
+        
+
+        geo_json_d9cb26a8cf0d693866dfb1f86a9155df.bindPopup(popup_3ed1b9a2acde567d723d2dbac78a39db)
+        ;
+
+        
+    
+    
+            geo_json_d9cb26a8cf0d693866dfb1f86a9155df.addTo(map_84d99aa356e4846a75be350ac7ee7d92);
+        
+    
+        function geo_json_250c3ad0f7de964b63fe5939012a2df0_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "white", "fillColor": "#e74c3c", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_250c3ad0f7de964b63fe5939012a2df0_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_250c3ad0f7de964b63fe5939012a2df0 = L.geoJson(null, {
+                onEachFeature: geo_json_250c3ad0f7de964b63fe5939012a2df0_onEachFeature,
+            
+                style: geo_json_250c3ad0f7de964b63fe5939012a2df0_styler,
+            ...{
+}
+        });
+
+        function geo_json_250c3ad0f7de964b63fe5939012a2df0_add (data) {
+            geo_json_250c3ad0f7de964b63fe5939012a2df0
+                .addData(data);
+        }
+            geo_json_250c3ad0f7de964b63fe5939012a2df0_add({"features": [{"geometry": {"coordinates": [[[-73.99306672475984, 40.77433850654827], [-73.98963766661983, 40.77295649332293], [-73.98704451971062, 40.77660488774179], [-73.98823352437793, 40.77716166985338], [-73.98714973757546, 40.77928691853204], [-73.98674581818847, 40.78058402788437], [-73.98821069346344, 40.78122505891703], [-73.98768599278554, 40.78216290002316], [-73.9865652634212, 40.782064038410304], [-73.98516250169958, 40.7839982850751], [-73.98473705705575, 40.78504251482436], [-73.98470913747732, 40.785595702546885], [-73.9841922514499, 40.785616802690505], [-73.98265479533252, 40.784970606976074], [-73.98445219960307, 40.78319175363302], [-73.98106345484025, 40.78175075015363], [-73.98081059690513, 40.7824731961474], [-73.97928494580403, 40.78183902023342], [-73.97974787055291, 40.78119536260816], [-73.97690313877095, 40.77999737613274], [-73.97642746465422, 40.780654270730345], [-73.97357116577913, 40.77947788180905], [-73.98164276308029, 40.76843818452373], [-73.98127942848953, 40.76800974299721], [-73.98163627319613, 40.76764488303195], [-73.98214099885266, 40.76767624947194], [-73.9824539026136, 40.76801208634977], [-73.98242595187051, 40.76827499311975], [-73.9821910490971, 40.76843275229064], [-73.98220500852914, 40.76893917961924], [-73.9843193677394, 40.76984201633277], [-73.98477434066237, 40.769219333323136], [-73.99386535381521, 40.77305739204924], [-73.99379753570523, 40.77342509886936], [-73.99306672475984, 40.77433850654827]]], "type": "Polygon"}, "id": 89, "properties": {"@id": "http://nyc.pediacities.com/Resource/PostalCode/10023", "BLDGpostalCode": 0, "CTY_FIPS": "061", "OBJECTID": 90, "PO_NAME": "New York", "STATE": "NY", "ST_FIPS": "36", "Shape_Area": 15212712.6783, "Shape_Leng": 22471.3859889, "borough": "Manhattan", "postalCode": "10023"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_250c3ad0f7de964b63fe5939012a2df0.bindTooltip(
+                `<div>
+                     Upper West Side (Food Desert) — ZIP 10023
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_8637292623cd120c76e6796d95748910 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2849ecbe367bb4b04c6f922944401bef = $(`<div id="html_2849ecbe367bb4b04c6f922944401bef" style="width: 100.0%; height: 100.0%;"><div style='font-family: Arial; width: 220px;'><h4 style='margin-bottom:5px;'>Upper West Side</h4><b>ZIP Code:</b> 10023<br><hr style='margin:4px 0'><b>Food Desert:</b> Yes<br><b>Population:</b> 130,044<br><b>Median Income:</b> $170,240<br><b>Poverty Rate:</b> 8.0%<br><b>Grocery Stores:</b> 26<br><b>Fast Food:</b> 37<br><b>Grocery/FastFood Ratio:</b> 0.7<br><b>Avg Google Rating:</b> 4.24 stars<br><b>Total Arrests:</b> 3,124<br><b>Arrests per 10k:</b> 240.2<br><b>% Grade A Inspections:</b> 94.2%</div></div>`)[0];
+                popup_8637292623cd120c76e6796d95748910.setContent(html_2849ecbe367bb4b04c6f922944401bef);
+            
+        
+
+        geo_json_250c3ad0f7de964b63fe5939012a2df0.bindPopup(popup_8637292623cd120c76e6796d95748910)
+        ;
+
+        
+    
+    
+            geo_json_250c3ad0f7de964b63fe5939012a2df0.addTo(map_84d99aa356e4846a75be350ac7ee7d92);
+        
+    
+        function geo_json_06927595d497e1db731ff15ab277e875_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "white", "fillColor": "#e74c3c", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_06927595d497e1db731ff15ab277e875_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_06927595d497e1db731ff15ab277e875 = L.geoJson(null, {
+                onEachFeature: geo_json_06927595d497e1db731ff15ab277e875_onEachFeature,
+            
+                style: geo_json_06927595d497e1db731ff15ab277e875_styler,
+            ...{
+}
+        });
+
+        function geo_json_06927595d497e1db731ff15ab277e875_add (data) {
+            geo_json_06927595d497e1db731ff15ab277e875
+                .addData(data);
+        }
+            geo_json_06927595d497e1db731ff15ab277e875_add({"features": [{"geometry": {"coordinates": [[[-73.9282828551014, 40.77690011062818], [-73.92398142234843, 40.77461513132962], [-73.92302570864821, 40.7753843296669], [-73.92375761329907, 40.776547028669825], [-73.92264887534152, 40.77742267430764], [-73.91431026542874, 40.77152309372572], [-73.91582766214444, 40.77027768826958], [-73.91675580733128, 40.770468123015455], [-73.91725836960862, 40.770772052894046], [-73.91811626314102, 40.77002851024616], [-73.91682128146127, 40.76979178214764], [-73.92188014977431, 40.76357440470882], [-73.92999065580524, 40.767390921832124], [-73.93522718173368, 40.769525743764376], [-73.93451011374543, 40.77033810504055], [-73.9342122085702, 40.77112939144285], [-73.93446033805583, 40.771181458578816], [-73.93436551045674, 40.77133084494266], [-73.93482653146948, 40.77157461085373], [-73.93479240551684, 40.77173030028253], [-73.93745897133056, 40.77253192429392], [-73.93781903150776, 40.773809356779516], [-73.9376512908773, 40.77504494079833], [-73.93644195605637, 40.77685690029757], [-73.93507850649249, 40.77793417414777], [-73.93410503402163, 40.77811590310507], [-73.93183570347979, 40.77784875202491], [-73.93108081059955, 40.77744046269213], [-73.9310876640554, 40.77719036119473], [-73.93067383513699, 40.77662139870418], [-73.92993489351963, 40.776196109879045], [-73.92855612794814, 40.77657433261874], [-73.9282828551014, 40.77690011062818]]], "type": "Polygon"}, "id": 93, "properties": {"@id": "http://nyc.pediacities.com/Resource/PostalCode/11102", "BLDGpostalCode": 0, "CTY_FIPS": "081", "OBJECTID": 94, "PO_NAME": "Astoria", "STATE": "NY", "ST_FIPS": "36", "Shape_Area": 19116258.4366, "Shape_Leng": 21056.9500245, "borough": "Queens", "postalCode": "11102"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_06927595d497e1db731ff15ab277e875.bindTooltip(
+                `<div>
+                     Astoria (Food Desert) — ZIP 11102
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_5ce42bb90f9bbb0fe5e9aed87da7e6cd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_58f48bb9b4fb4679ab7b3e89167f3b79 = $(`<div id="html_58f48bb9b4fb4679ab7b3e89167f3b79" style="width: 100.0%; height: 100.0%;"><div style='font-family: Arial; width: 220px;'><h4 style='margin-bottom:5px;'>Astoria</h4><b>ZIP Code:</b> 11102<br><hr style='margin:4px 0'><b>Food Desert:</b> Yes<br><b>Population:</b> 63,706<br><b>Median Income:</b> $97,892<br><b>Poverty Rate:</b> 11.1%<br><b>Grocery Stores:</b> 26<br><b>Fast Food:</b> 31<br><b>Grocery/FastFood Ratio:</b> 0.84<br><b>Avg Google Rating:</b> 4.38 stars<br><b>Total Arrests:</b> 2,789<br><b>Arrests per 10k:</b> 437.8<br><b>% Grade A Inspections:</b> 93.1%</div></div>`)[0];
+                popup_5ce42bb90f9bbb0fe5e9aed87da7e6cd.setContent(html_58f48bb9b4fb4679ab7b3e89167f3b79);
+            
+        
+
+        geo_json_06927595d497e1db731ff15ab277e875.bindPopup(popup_5ce42bb90f9bbb0fe5e9aed87da7e6cd)
+        ;
+
+        
+    
+    
+            geo_json_06927595d497e1db731ff15ab277e875.addTo(map_84d99aa356e4846a75be350ac7ee7d92);
+        
+    
+        function geo_json_1bb92fdf6400a5a3224e46ef1471741c_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "white", "fillColor": "#e74c3c", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_1bb92fdf6400a5a3224e46ef1471741c_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_1bb92fdf6400a5a3224e46ef1471741c = L.geoJson(null, {
+                onEachFeature: geo_json_1bb92fdf6400a5a3224e46ef1471741c_onEachFeature,
+            
+                style: geo_json_1bb92fdf6400a5a3224e46ef1471741c_styler,
+            ...{
+}
+        });
+
+        function geo_json_1bb92fdf6400a5a3224e46ef1471741c_add (data) {
+            geo_json_1bb92fdf6400a5a3224e46ef1471741c
+                .addData(data);
+        }
+            geo_json_1bb92fdf6400a5a3224e46ef1471741c_add({"features": [{"geometry": {"coordinates": [[[-73.91431026542874, 40.77152309372572], [-73.9116731795285, 40.7696446318411], [-73.90464128651125, 40.76854227398368], [-73.90400273887188, 40.76815993449083], [-73.90162630902455, 40.76774915959758], [-73.90341708784594, 40.76596274862129], [-73.90980288228722, 40.75802403378785], [-73.91068363250272, 40.758319004278015], [-73.91261086660244, 40.755970967220485], [-73.91216835511808, 40.75576352877939], [-73.91069114846269, 40.75299692776756], [-73.9146850512154, 40.753666774343], [-73.9146702556466, 40.75378922228218], [-73.92245965235857, 40.75742738840943], [-73.9186859628096, 40.762072064499684], [-73.92188014977431, 40.76357440470882], [-73.91682128146127, 40.76979178214764], [-73.91811626314102, 40.77002851024616], [-73.91725836960862, 40.770772052894046], [-73.91675580733128, 40.770468123015455], [-73.91582766214444, 40.77027768826958], [-73.91431026542874, 40.77152309372572]]], "type": "Polygon"}, "id": 101, "properties": {"@id": "http://nyc.pediacities.com/Resource/PostalCode/11103", "BLDGpostalCode": 0, "CTY_FIPS": "081", "OBJECTID": 102, "PO_NAME": "Astoria", "STATE": "NY", "ST_FIPS": "36", "Shape_Area": 20222394.6253, "Shape_Leng": 21848.9570436, "borough": "Queens", "postalCode": "11103"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_1bb92fdf6400a5a3224e46ef1471741c.bindTooltip(
+                `<div>
+                     Astoria (Food Desert) — ZIP 11103
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_fc7405006eb10ffc8ceb51a8288bab7e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d6f1dbfe7ce1b3ec0fe7c6c9a79a3a35 = $(`<div id="html_d6f1dbfe7ce1b3ec0fe7c6c9a79a3a35" style="width: 100.0%; height: 100.0%;"><div style='font-family: Arial; width: 220px;'><h4 style='margin-bottom:5px;'>Astoria</h4><b>ZIP Code:</b> 11103<br><hr style='margin:4px 0'><b>Food Desert:</b> Yes<br><b>Population:</b> 63,706<br><b>Median Income:</b> $97,892<br><b>Poverty Rate:</b> 11.1%<br><b>Grocery Stores:</b> 26<br><b>Fast Food:</b> 31<br><b>Grocery/FastFood Ratio:</b> 0.84<br><b>Avg Google Rating:</b> 4.38 stars<br><b>Total Arrests:</b> 2,789<br><b>Arrests per 10k:</b> 437.8<br><b>% Grade A Inspections:</b> 93.1%</div></div>`)[0];
+                popup_fc7405006eb10ffc8ceb51a8288bab7e.setContent(html_d6f1dbfe7ce1b3ec0fe7c6c9a79a3a35);
+            
+        
+
+        geo_json_1bb92fdf6400a5a3224e46ef1471741c.bindPopup(popup_fc7405006eb10ffc8ceb51a8288bab7e)
+        ;
+
+        
+    
+    
+            geo_json_1bb92fdf6400a5a3224e46ef1471741c.addTo(map_84d99aa356e4846a75be350ac7ee7d92);
+        
+    
+        function geo_json_56585da5c288e1b0521fbf008317581d_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "white", "fillColor": "#e74c3c", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_56585da5c288e1b0521fbf008317581d_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_56585da5c288e1b0521fbf008317581d = L.geoJson(null, {
+                onEachFeature: geo_json_56585da5c288e1b0521fbf008317581d_onEachFeature,
+            
+                style: geo_json_56585da5c288e1b0521fbf008317581d_styler,
+            ...{
+}
+        });
+
+        function geo_json_56585da5c288e1b0521fbf008317581d_add (data) {
+            geo_json_56585da5c288e1b0521fbf008317581d
+                .addData(data);
+        }
+            geo_json_56585da5c288e1b0521fbf008317581d_add({"features": [{"geometry": {"coordinates": [[[-73.86631717855946, 40.68335711099972], [-73.86602666577242, 40.681918071472445], [-73.86410096028297, 40.68237286610314], [-73.86330275202471, 40.6791673971059], [-73.86234580327775, 40.67916479829648], [-73.86038937968384, 40.6712687870068], [-73.8576332259874, 40.67165620921026], [-73.85726743908066, 40.67025530510809], [-73.8570911025524, 40.66842922375768], [-73.85644791923518, 40.66701557682865], [-73.8556847223303, 40.66386765764766], [-73.85614358258553, 40.66380565184222], [-73.85835015133844, 40.661191283020145], [-73.85901802354253, 40.66112722932875], [-73.85902299881785, 40.66056191211103], [-73.85972182235147, 40.66045738338298], [-73.8603165317672, 40.659994697135176], [-73.86085318564818, 40.66009471158211], [-73.86122497595694, 40.659963051192335], [-73.86126458307179, 40.659696863632185], [-73.8608155049672, 40.65942027192822], [-73.8608022075989, 40.659160241257425], [-73.86181536560623, 40.658894419734835], [-73.8634691653014, 40.6580711457512], [-73.86300026996697, 40.65742992292765], [-73.8617332527796, 40.65802818775988], [-73.86162619304672, 40.65785817903078], [-73.86170327041881, 40.656648774435425], [-73.86006031362815, 40.655593034396304], [-73.85936352325464, 40.65496282681242], [-73.85917017981437, 40.65445428103844], [-73.858532372346, 40.653688063195624], [-73.8583140977687, 40.65301855809123], [-73.8577116537713, 40.65273797377175], [-73.8569352521369, 40.65281901725462], [-73.85660477115289, 40.65266746448696], [-73.85655196281407, 40.652230722817784], [-73.85637454982901, 40.652122232968026], [-73.85634543109734, 40.65139709546204], [-73.85600166804072, 40.651319317333105], [-73.85589930012281, 40.65113247198908], [-73.8569663196094, 40.65064151650561], [-73.85724632319452, 40.65084655587971], [-73.85728896140597, 40.65124212197091], [-73.85827460034318, 40.65170994624631], [-73.85841271211518, 40.652170658622026], [-73.85897501760678, 40.652912435612635], [-73.86040087267926, 40.65387857796036], [-73.86136419852069, 40.65512150458912], [-73.862436840387, 40.65530596505754], [-73.8639165138463, 40.6561155997554], [-73.86599116475726, 40.65886225104665], [-73.87581825453837, 40.65465410965302], [-73.87690721483418, 40.65454654627567], [-73.87932520458834, 40.65502949796877], [-73.87973335420283, 40.65556307524163], [-73.87811744363498, 40.65625992302526], [-73.87915041166048, 40.65766027603991], [-73.87670831524994, 40.658713703268894], [-73.88250667697538, 40.66646897873128], [-73.8823950816055, 40.66651699461234], [-73.88527690403397, 40.67778122690806], [-73.88508524657688, 40.67783466314029], [-73.88650460957112, 40.68334858464635], [-73.88824094403893, 40.682532132277], [-73.88994141697744, 40.68403417375749], [-73.88843824436687, 40.685092700308985], [-73.88784904739725, 40.685906426788215], [-73.88407465181716, 40.68780821975699], [-73.87967425772909, 40.69112927354322], [-73.87437496914276, 40.69398481977425], [-73.86933366148148, 40.69487010897182], [-73.86858392816171, 40.69386163086183], [-73.86747242588382, 40.68844673910506], [-73.86659847614406, 40.685269574606316], [-73.86631717855946, 40.68335711099972]]], "type": "Polygon"}, "id": 143, "properties": {"@id": "http://nyc.pediacities.com/Resource/PostalCode/11208", "BLDGpostalCode": 0, "CTY_FIPS": "047", "OBJECTID": 144, "PO_NAME": "Brooklyn", "STATE": "NY", "ST_FIPS": "36", "Shape_Area": 79294685.4617, "Shape_Leng": 49932.2412248, "borough": "Brooklyn", "postalCode": "11208"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_56585da5c288e1b0521fbf008317581d.bindTooltip(
+                `<div>
+                     East New York (Food Desert) — ZIP 11208
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_217e0dede2ba99f38666f0ab754f302f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_134b7412a10813d9681f674c5d154bed = $(`<div id="html_134b7412a10813d9681f674c5d154bed" style="width: 100.0%; height: 100.0%;"><div style='font-family: Arial; width: 220px;'><h4 style='margin-bottom:5px;'>East New York</h4><b>ZIP Code:</b> 11208<br><hr style='margin:4px 0'><b>Food Desert:</b> Yes<br><b>Population:</b> 200,346<br><b>Median Income:</b> $57,704<br><b>Poverty Rate:</b> 23.2%<br><b>Grocery Stores:</b> 34<br><b>Fast Food:</b> 37<br><b>Grocery/FastFood Ratio:</b> 0.92<br><b>Avg Google Rating:</b> 4.14 stars<br><b>Total Arrests:</b> 8,878<br><b>Arrests per 10k:</b> 443.1<br><b>% Grade A Inspections:</b> 94.7%</div></div>`)[0];
+                popup_217e0dede2ba99f38666f0ab754f302f.setContent(html_134b7412a10813d9681f674c5d154bed);
+            
+        
+
+        geo_json_56585da5c288e1b0521fbf008317581d.bindPopup(popup_217e0dede2ba99f38666f0ab754f302f)
+        ;
+
+        
+    
+    
+            geo_json_56585da5c288e1b0521fbf008317581d.addTo(map_84d99aa356e4846a75be350ac7ee7d92);
+        
+    
+        function geo_json_5e94ef4b9959b8d17b1c8c03ae8085c3_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "white", "fillColor": "#e74c3c", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_5e94ef4b9959b8d17b1c8c03ae8085c3_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_5e94ef4b9959b8d17b1c8c03ae8085c3 = L.geoJson(null, {
+                onEachFeature: geo_json_5e94ef4b9959b8d17b1c8c03ae8085c3_onEachFeature,
+            
+                style: geo_json_5e94ef4b9959b8d17b1c8c03ae8085c3_styler,
+            ...{
+}
+        });
+
+        function geo_json_5e94ef4b9959b8d17b1c8c03ae8085c3_add (data) {
+            geo_json_5e94ef4b9959b8d17b1c8c03ae8085c3
+                .addData(data);
+        }
+            geo_json_5e94ef4b9959b8d17b1c8c03ae8085c3_add({"features": [{"geometry": {"coordinates": [[[-73.9036808841809, 40.690460874462154], [-73.90211256939581, 40.692001504268234], [-73.9014929917251, 40.69142400302761], [-73.9018860042185, 40.69081099170145], [-73.90048698549924, 40.68779799653781], [-73.90118898957714, 40.687598001148075], [-73.89668301568736, 40.6823719922445], [-73.89652848528824, 40.68236770291731], [-73.89570854411691, 40.6836475260256], [-73.89439360877739, 40.68511990886822], [-73.89274901345493, 40.68321199847903], [-73.89038101065086, 40.6845969917326], [-73.88900505422322, 40.68308845887022], [-73.88824094403893, 40.682532132277], [-73.88650460957112, 40.68334858464635], [-73.88508524657688, 40.67783466314029], [-73.88527690403397, 40.67778122690806], [-73.8823950816055, 40.66651699461234], [-73.88250667697538, 40.66646897873128], [-73.87670831524994, 40.658713703268894], [-73.87915041166048, 40.65766027603991], [-73.87811744363498, 40.65625992302526], [-73.88628186516408, 40.65275579606349], [-73.88480602073611, 40.650765238656355], [-73.88621099186095, 40.650141060764426], [-73.8876754365756, 40.64919411588788], [-73.88999352358951, 40.65113800525259], [-73.89125146783574, 40.650025614512685], [-73.89323807930971, 40.651811271575966], [-73.89520539668301, 40.65448795300862], [-73.89760988892024, 40.65345307702225], [-73.89797764993642, 40.653659238771574], [-73.89848161593164, 40.65584620725898], [-73.89872509045473, 40.65580996714429], [-73.8991827808742, 40.657358504591336], [-73.89982259690147, 40.65729128796997], [-73.89946353296122, 40.6586827358688], [-73.89953138665216, 40.65896986653199], [-73.90091625191538, 40.66373345964472], [-73.90072246594312, 40.6637786795063], [-73.9019226438036, 40.66837507399539], [-73.90222652406146, 40.66833055629683], [-73.90361711807671, 40.67334411191762], [-73.90325835602846, 40.6733963820095], [-73.90347422563424, 40.6755067025594], [-73.90240783422718, 40.67587541049135], [-73.90346256333866, 40.676015806333304], [-73.90329155804092, 40.67786792438706], [-73.9034668872538, 40.67889653817026], [-73.91604598744264, 40.68607208871235], [-73.90885282871758, 40.693404451309675], [-73.9036808841809, 40.690460874462154]]], "type": "Polygon"}, "id": 144, "properties": {"@id": "http://nyc.pediacities.com/Resource/PostalCode/11207", "BLDGpostalCode": 0, "CTY_FIPS": "047", "OBJECTID": 145, "PO_NAME": "Brooklyn", "STATE": "NY", "ST_FIPS": "36", "Shape_Area": 73742269.4034, "Shape_Leng": 48841.6886408, "borough": "Brooklyn", "postalCode": "11207"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_5e94ef4b9959b8d17b1c8c03ae8085c3.bindTooltip(
+                `<div>
+                     East New York (Food Desert) — ZIP 11207
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_d4b71d08cbd276ee3420583d20363752 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1f4675fcfd8526b28acaf0f8a42b3001 = $(`<div id="html_1f4675fcfd8526b28acaf0f8a42b3001" style="width: 100.0%; height: 100.0%;"><div style='font-family: Arial; width: 220px;'><h4 style='margin-bottom:5px;'>East New York</h4><b>ZIP Code:</b> 11207<br><hr style='margin:4px 0'><b>Food Desert:</b> Yes<br><b>Population:</b> 200,346<br><b>Median Income:</b> $57,704<br><b>Poverty Rate:</b> 23.2%<br><b>Grocery Stores:</b> 34<br><b>Fast Food:</b> 37<br><b>Grocery/FastFood Ratio:</b> 0.92<br><b>Avg Google Rating:</b> 4.14 stars<br><b>Total Arrests:</b> 8,878<br><b>Arrests per 10k:</b> 443.1<br><b>% Grade A Inspections:</b> 94.7%</div></div>`)[0];
+                popup_d4b71d08cbd276ee3420583d20363752.setContent(html_1f4675fcfd8526b28acaf0f8a42b3001);
+            
+        
+
+        geo_json_5e94ef4b9959b8d17b1c8c03ae8085c3.bindPopup(popup_d4b71d08cbd276ee3420583d20363752)
+        ;
+
+        
+    
+    
+            geo_json_5e94ef4b9959b8d17b1c8c03ae8085c3.addTo(map_84d99aa356e4846a75be350ac7ee7d92);
+        
+    
+        function geo_json_86bad86287302280582bf972c5279b67_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "white", "fillColor": "#e74c3c", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_86bad86287302280582bf972c5279b67_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_86bad86287302280582bf972c5279b67 = L.geoJson(null, {
+                onEachFeature: geo_json_86bad86287302280582bf972c5279b67_onEachFeature,
+            
+                style: geo_json_86bad86287302280582bf972c5279b67_styler,
+            ...{
+}
+        });
+
+        function geo_json_86bad86287302280582bf972c5279b67_add (data) {
+            geo_json_86bad86287302280582bf972c5279b67
+                .addData(data);
+        }
+            geo_json_86bad86287302280582bf972c5279b67_add({"features": [{"geometry": {"coordinates": [[[-73.97312638166959, 40.68962191204708], [-73.97268745886024, 40.68741521219588], [-73.97364817218354, 40.68730263517516], [-73.97337441103068, 40.6858843937325], [-73.97227444657481, 40.685442737240315], [-73.97174180986187, 40.68264604091808], [-73.97056593435647, 40.68239711329087], [-73.97244491752706, 40.67716202563518], [-73.9710372120815, 40.67521982687078], [-73.97142972878434, 40.674501378015414], [-73.97143919387159, 40.673704530821375], [-73.9711150353508, 40.673032182042505], [-73.97056656943508, 40.672569749160644], [-73.9885251889362, 40.679545243363215], [-73.9880802895133, 40.680172182161854], [-73.99129653469775, 40.68142490111971], [-73.98615533458484, 40.68901799509115], [-73.98398776888328, 40.688174665866725], [-73.98357261233409, 40.68878596951027], [-73.9814004477665, 40.687944458530026], [-73.9808430731184, 40.688761379518375], [-73.9809286333195, 40.688903229990196], [-73.97928542394416, 40.68825406748951], [-73.97951029855233, 40.689863015342716], [-73.97312638166959, 40.68962191204708]]], "type": "Polygon"}, "id": 148, "properties": {"@id": "http://nyc.pediacities.com/Resource/PostalCode/11217", "BLDGpostalCode": 0, "CTY_FIPS": "047", "OBJECTID": 149, "PO_NAME": "Brooklyn", "STATE": "NY", "ST_FIPS": "36", "Shape_Area": 21648157.7324, "Shape_Leng": 22010.9653659, "borough": "Brooklyn", "postalCode": "11217"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_86bad86287302280582bf972c5279b67.bindTooltip(
+                `<div>
+                     Park Slope (Food Desert) — ZIP 11217
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_83eb95a8df637faa081ed72a0609eee3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_49481298900c89555990b437ff8e3c9f = $(`<div id="html_49481298900c89555990b437ff8e3c9f" style="width: 100.0%; height: 100.0%;"><div style='font-family: Arial; width: 220px;'><h4 style='margin-bottom:5px;'>Park Slope</h4><b>ZIP Code:</b> 11217<br><hr style='margin:4px 0'><b>Food Desert:</b> Yes<br><b>Population:</b> 113,491<br><b>Median Income:</b> $169,544<br><b>Poverty Rate:</b> 7.5%<br><b>Grocery Stores:</b> 34<br><b>Fast Food:</b> 38<br><b>Grocery/FastFood Ratio:</b> 0.9<br><b>Avg Google Rating:</b> 4.36 stars<br><b>Total Arrests:</b> 3,261<br><b>Arrests per 10k:</b> 287.3<br><b>% Grade A Inspections:</b> 93.4%</div></div>`)[0];
+                popup_83eb95a8df637faa081ed72a0609eee3.setContent(html_49481298900c89555990b437ff8e3c9f);
+            
+        
+
+        geo_json_86bad86287302280582bf972c5279b67.bindPopup(popup_83eb95a8df637faa081ed72a0609eee3)
+        ;
+
+        
+    
+    
+            geo_json_86bad86287302280582bf972c5279b67.addTo(map_84d99aa356e4846a75be350ac7ee7d92);
+        
+    
+        function geo_json_922b5e6e9d20805ec6c75486878c067c_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "white", "fillColor": "#e74c3c", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_922b5e6e9d20805ec6c75486878c067c_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_922b5e6e9d20805ec6c75486878c067c = L.geoJson(null, {
+                onEachFeature: geo_json_922b5e6e9d20805ec6c75486878c067c_onEachFeature,
+            
+                style: geo_json_922b5e6e9d20805ec6c75486878c067c_styler,
+            ...{
+}
+        });
+
+        function geo_json_922b5e6e9d20805ec6c75486878c067c_add (data) {
+            geo_json_922b5e6e9d20805ec6c75486878c067c
+                .addData(data);
+        }
+            geo_json_922b5e6e9d20805ec6c75486878c067c_add({"features": [{"geometry": {"coordinates": [[[-73.9885251889362, 40.679545243363215], [-73.97041590733849, 40.672508434960484], [-73.97001522008324, 40.672489816636336], [-73.97004217764446, 40.672682873406565], [-73.96965337599721, 40.672736825834356], [-73.9696500952962, 40.67251546032256], [-73.96924603502632, 40.67274060429275], [-73.96238231429763, 40.66306545621909], [-73.96296107574787, 40.66253025918618], [-73.96307465154551, 40.66208390345366], [-73.96190027949535, 40.65487097940547], [-73.97162157042683, 40.651080782115805], [-73.97179093241225, 40.650706283252894], [-73.97227816596437, 40.6506019443971], [-73.97273315336935, 40.65093703396311], [-73.97265985717655, 40.651257671916746], [-73.97232900815814, 40.65144490221918], [-73.97421783050856, 40.65793528217479], [-73.97453696819495, 40.6583858682717], [-73.97515737918074, 40.658722816086126], [-73.97730806733415, 40.65614941060246], [-73.97951266200195, 40.65747889001511], [-73.98179567724827, 40.65524611278827], [-73.98842872143268, 40.65924987290934], [-73.99022370701532, 40.65760474601137], [-73.99458789511169, 40.6602279499465], [-73.99225493973738, 40.66246876316664], [-73.99668527350062, 40.66514240039241], [-73.99629073358102, 40.66646513810911], [-73.99633369323129, 40.66784711505598], [-73.99870614995432, 40.67178004945514], [-73.99599030207881, 40.67495406563052], [-73.99485390020821, 40.67593525020191], [-73.99413115472882, 40.67617006265493], [-73.99315249590119, 40.676178458102655], [-73.99070882510787, 40.67579851982143], [-73.98941122837437, 40.67736087010204], [-73.98931928300125, 40.6783457697127], [-73.9885251889362, 40.679545243363215]]], "type": "Polygon"}, "id": 154, "properties": {"@id": "http://nyc.pediacities.com/Resource/PostalCode/11215", "BLDGpostalCode": 0, "CTY_FIPS": "047", "OBJECTID": 155, "PO_NAME": "Brooklyn", "STATE": "NY", "ST_FIPS": "36", "Shape_Area": 61922821.7464, "Shape_Leng": 37186.6294, "borough": "Brooklyn", "postalCode": "11215"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_922b5e6e9d20805ec6c75486878c067c.bindTooltip(
+                `<div>
+                     Park Slope (Food Desert) — ZIP 11215
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_59b8306b940eab8cb2fd11cfb0f37666 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_15241e3e999ad2775173fc6e0fd1ccad = $(`<div id="html_15241e3e999ad2775173fc6e0fd1ccad" style="width: 100.0%; height: 100.0%;"><div style='font-family: Arial; width: 220px;'><h4 style='margin-bottom:5px;'>Park Slope</h4><b>ZIP Code:</b> 11215<br><hr style='margin:4px 0'><b>Food Desert:</b> Yes<br><b>Population:</b> 113,491<br><b>Median Income:</b> $169,544<br><b>Poverty Rate:</b> 7.5%<br><b>Grocery Stores:</b> 34<br><b>Fast Food:</b> 38<br><b>Grocery/FastFood Ratio:</b> 0.9<br><b>Avg Google Rating:</b> 4.36 stars<br><b>Total Arrests:</b> 3,261<br><b>Arrests per 10k:</b> 287.3<br><b>% Grade A Inspections:</b> 93.4%</div></div>`)[0];
+                popup_59b8306b940eab8cb2fd11cfb0f37666.setContent(html_15241e3e999ad2775173fc6e0fd1ccad);
+            
+        
+
+        geo_json_922b5e6e9d20805ec6c75486878c067c.bindPopup(popup_59b8306b940eab8cb2fd11cfb0f37666)
+        ;
+
+        
+    
+    
+            geo_json_922b5e6e9d20805ec6c75486878c067c.addTo(map_84d99aa356e4846a75be350ac7ee7d92);
+        
+</script>
+</html>

@@ -332,16 +332,17 @@ summary_df["economic_access_gap"] = summary_df["avg_median_income"].apply(
 print("\n🧮 Computing Food Access Score...")
 
 summary_df["food_access_score"] = (
-    (summary_df["snap_grocery_per_10k"]     * 8.0)   +
-    (summary_df["nonsnap_grocery_per_10k"]  * 5.0)   +
-    (summary_df["membership_per_10k"]       * 3.0)   +
-    (summary_df["snap_convenience_ratio"] / 100 * -8.0)  +
-    (summary_df["food_balance_ratio"]       * 4.0)   +
-    (summary_df["year_round_markets"]       * 1.0)   +
-    (summary_df["farmers_markets_per_10k"]  * 0.5)   +
-    (summary_df["gardens_per_10k"]          * 0.25)  +
-    (summary_df["pct_grade_A"] / 100        * 0.2)   +
-    (summary_df["economic_access_gap"]      * -1.0)
+    (summary_df["snap_grocery_per_10k"]        * 8.0)   +
+    (summary_df["nonsnap_grocery_per_10k"]     * 5.0)   +
+    (summary_df["membership_per_10k"]          * 3.0)   +
+    (summary_df["snap_convenience_ratio"] / 100 * -8.0) +
+    (summary_df["food_balance_ratio"]          * 4.0)   +
+    (summary_df["fastfood_per_10k"]            * -0.5)  +
+    (summary_df["year_round_markets"]          * 1.0)   +
+    (summary_df["farmers_markets_per_10k"]     * 0.5)   +
+    (summary_df["gardens_per_10k"]             * 0.25)  +
+    (summary_df["pct_grade_A"] / 100           * 0.2)   +
+    (summary_df["economic_access_gap"]         * -3.0)
 ).round(2)
 
 print(f"  Score range: {summary_df['food_access_score'].min():.1f} — {summary_df['food_access_score'].max():.1f}")

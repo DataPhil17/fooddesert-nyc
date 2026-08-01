@@ -30,7 +30,12 @@ Among At Risk neighborhoods, the highest-priority cases combine large population
 
 ## NYC's City-Owned Grocery Initiative
 
-In 2024, New York City announced plans to open city-owned grocery stores in underserved neighborhoods. This analysis provides a data-driven framework for evaluating which neighborhoods should be prioritized and how many stores are needed to produce a measurable improvement in food access scores.
+New York City is actively rolling out city-owned grocery stores in underserved neighborhoods. Mayor Mamdani's administration announced the initiative with the first locations expected to open in 2026, targeting neighborhoods with documented food access gaps. This analysis provides a data-driven framework for evaluating which neighborhoods should be prioritized and how many stores are needed to produce a measurable improvement in food access scores.
+
+<div style="font-size:11px;color:#9C8C78;margin-bottom:16px;">
+  Source: USA Today, "When will Mamdani open city-owned grocery stores in NYC?" July 30, 2026.
+  <a href="https://www.usatoday.com/story/news/state/new-york/new-york-city/2026/07/30/when-will-mamdani-open-city-owned-grocery-stores-in-nyc-what-to-know/91103886007/" style="color:#8B2C2C;" target="_blank">Read article</a>
+</div>
 
 The intervention estimates on the map represent the minimum number of SNAP-authorized grocery stores needed to move each neighborhood into the next tier. These figures assume all other formula variables remain constant — in practice, adding grocery stores would also improve the food balance ratio and potentially reduce convenience store dominance, meaning actual remediation may require fewer stores than estimated here.
 

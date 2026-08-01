@@ -8,76 +8,79 @@ The Food Access Score is a composite metric designed to measure the quality, den
 
 ## The Food Access Score
 
-Each neighborhood receives a score based on ten weighted variables. Higher scores indicate better food access.
+Each neighborhood receives a score based on eleven weighted variables. Higher scores indicate better food access.
 
-<div style="background:#EDE6DC; border:1px solid #C4B49A; border-radius:8px; padding:20px; margin:20px 0; font-family: 'Courier New', monospace; font-size:13px;">
+<div style="background:#EDE6DC; border:1px solid #C4B49A; border-radius:8px; padding:20px; margin:20px 0;">
 
-<div style="font-size:14px; font-weight:700; color:#2C2416; margin-bottom:16px; font-family:Arial,sans-serif;">Food Access Score Formula</div>
+<div style="font-size:14px; font-weight:700; color:#2C2416; margin-bottom:16px;">Food Access Score Formula</div>
 
-<table style="width:100%; border-collapse:collapse;">
+<table style="width:100%; border-collapse:collapse; font-size:13px;">
   <thead>
     <tr style="border-bottom:2px solid #C4B49A;">
-      <th style="text-align:left; padding:6px 10px; color:#6B5C48; font-size:11px; text-transform:uppercase; letter-spacing:0.05em;">Variable</th>
-      <th style="text-align:center; padding:6px 10px; color:#6B5C48; font-size:11px; text-transform:uppercase; letter-spacing:0.05em;">Weight</th>
-      <th style="text-align:left; padding:6px 10px; color:#6B5C48; font-size:11px; text-transform:uppercase; letter-spacing:0.05em;">What it measures</th>
+      <th style="text-align:left; padding:7px 10px; color:#6B5C48; font-size:11px; text-transform:uppercase; letter-spacing:0.05em;">Variable</th>
+      <th style="text-align:center; padding:7px 10px; color:#6B5C48; font-size:11px; text-transform:uppercase; letter-spacing:0.05em;">Weight</th>
+      <th style="text-align:left; padding:7px 10px; color:#6B5C48; font-size:11px; text-transform:uppercase; letter-spacing:0.05em;">What it measures</th>
     </tr>
   </thead>
   <tbody>
     <tr style="border-bottom:1px solid #C4B49A; background:#F5F0EB;">
-      <td style="padding:8px 10px; color:#2C2416; font-weight:600;">snap_grocery_per_10k</td>
+      <td style="padding:8px 10px; color:#2C2416; font-weight:600; font-family:monospace;">snap_grocery_per_10k</td>
       <td style="padding:8px 10px; text-align:center; color:#0077BB; font-weight:700;">+8.0</td>
       <td style="padding:8px 10px; color:#4A3828;">SNAP grocery store density per capita</td>
     </tr>
     <tr style="border-bottom:1px solid #C4B49A;">
-      <td style="padding:8px 10px; color:#2C2416; font-weight:600;">nonsnap_grocery_per_10k</td>
+      <td style="padding:8px 10px; color:#2C2416; font-weight:600; font-family:monospace;">nonsnap_grocery_per_10k</td>
       <td style="padding:8px 10px; text-align:center; color:#0077BB; font-weight:700;">+5.0</td>
       <td style="padding:8px 10px; color:#4A3828;">Non-SNAP grocery access, size-weighted</td>
     </tr>
     <tr style="border-bottom:1px solid #C4B49A; background:#F5F0EB;">
-      <td style="padding:8px 10px; color:#2C2416; font-weight:600;">membership_per_10k</td>
+      <td style="padding:8px 10px; color:#2C2416; font-weight:600; font-family:monospace;">membership_per_10k</td>
       <td style="padding:8px 10px; text-align:center; color:#0077BB; font-weight:700;">+3.0</td>
       <td style="padding:8px 10px; color:#4A3828;">Warehouse stores — Costco, BJ's (paywall discount)</td>
     </tr>
     <tr style="border-bottom:1px solid #C4B49A;">
-      <td style="padding:8px 10px; color:#2C2416; font-weight:600;">convenience_ratio / 100</td>
+      <td style="padding:8px 10px; color:#2C2416; font-weight:600; font-family:monospace;">convenience_ratio / 100</td>
       <td style="padding:8px 10px; text-align:center; color:#CC3311; font-weight:700;">−8.0</td>
       <td style="padding:8px 10px; color:#4A3828;">Convenience store dominance penalty</td>
     </tr>
     <tr style="border-bottom:1px solid #C4B49A; background:#F5F0EB;">
-      <td style="padding:8px 10px; color:#2C2416; font-weight:600;">food_balance_ratio</td>
+      <td style="padding:8px 10px; color:#2C2416; font-weight:600; font-family:monospace;">food_balance_ratio</td>
       <td style="padding:8px 10px; text-align:center; color:#0077BB; font-weight:700;">+4.0</td>
       <td style="padding:8px 10px; color:#4A3828;">Grocery vs. fast food balance</td>
     </tr>
     <tr style="border-bottom:1px solid #C4B49A;">
-      <td style="padding:8px 10px; color:#2C2416; font-weight:600;">year_round_markets</td>
+      <td style="padding:8px 10px; color:#2C2416; font-weight:600; font-family:monospace;">year_round_markets</td>
       <td style="padding:8px 10px; text-align:center; color:#0077BB; font-weight:700;">+1.0</td>
       <td style="padding:8px 10px; color:#4A3828;">Reliable year-round fresh produce access</td>
     </tr>
     <tr style="border-bottom:1px solid #C4B49A; background:#F5F0EB;">
-      <td style="padding:8px 10px; color:#2C2416; font-weight:600;">farmers_markets_per_10k</td>
+      <td style="padding:8px 10px; color:#2C2416; font-weight:600; font-family:monospace;">farmers_markets_per_10k</td>
       <td style="padding:8px 10px; text-align:center; color:#0077BB; font-weight:700;">+0.5</td>
       <td style="padding:8px 10px; color:#4A3828;">Normalized market access per capita</td>
     </tr>
     <tr style="border-bottom:1px solid #C4B49A;">
-      <td style="padding:8px 10px; color:#2C2416; font-weight:600;">gardens_per_10k</td>
+      <td style="padding:8px 10px; color:#2C2416; font-weight:600; font-family:monospace;">gardens_per_10k</td>
       <td style="padding:8px 10px; text-align:center; color:#0077BB; font-weight:700;">+0.25</td>
-      <td style="padding:8px 10px; color:#4A3828;">Community gardens (partial credit — not all produce food)</td>
+      <td style="padding:8px 10px; color:#4A3828;">Community gardens (partial credit)</td>
     </tr>
     <tr style="border-bottom:1px solid #C4B49A; background:#F5F0EB;">
-      <td style="padding:8px 10px; color:#2C2416; font-weight:600;">pct_grade_A / 100</td>
+      <td style="padding:8px 10px; color:#2C2416; font-weight:600; font-family:monospace;">pct_grade_A / 100</td>
       <td style="padding:8px 10px; text-align:center; color:#0077BB; font-weight:700;">+0.2</td>
       <td style="padding:8px 10px; color:#4A3828;">Food quality signal — NYC DOHMH Grade A inspections</td>
     </tr>
     <tr>
-      <td style="padding:8px 10px; color:#2C2416; font-weight:600;">economic_access_gap</td>
-      <td style="padding:8px 10px; text-align:center; color:#CC3311; font-weight:700;">−1.0</td>
+      <td style="padding:8px 10px; color:#2C2416; font-weight:600; font-family:monospace;">economic_access_gap</td>
+      <td style="padding:8px 10px; text-align:center; color:#CC3311; font-weight:700;">−3.0</td>
       <td style="padding:8px 10px; color:#4A3828;">Affordability penalty — income vs. food price mismatch</td>
     </tr>
   </tbody>
 </table>
 
-<div style="margin-top:12px; font-size:11px; color:#6B5C48; font-family:Arial,sans-serif;">
+<div style="margin-top:12px; font-size:11px; color:#6B5C48;">
   Blue weights are additive (better access). Red weights are penalties (worse access).
+  The convenience store penalty and economic access gap are the two strongest barriers in the formula,
+  reflecting that both the quality of available retail and residents' ability to afford it are
+  fundamental constraints on food access.
 </div>
 </div>
 
@@ -91,9 +94,9 @@ Each neighborhood receives a score based on ten weighted variables. Higher score
 
 **membership_per_10k** — Warehouse and membership stores (Costco, BJ's) per 10,000 residents. Given the lowest weight among grocery terms because the membership fee represents a meaningful barrier for lower-income households.
 
-**convenience_ratio** — The percentage of SNAP-authorized retailers classified as convenience stores. This is the strongest penalty term in the formula. A neighborhood where 70% of its SNAP retail options are bodegas and corner stores has a fundamentally different food access reality than one where 70% are grocery stores.
+**convenience_ratio** — The percentage of SNAP-authorized retailers classified as convenience stores. This is one of the two strongest penalty terms in the formula at −8.0. A neighborhood where 70% of its SNAP retail options are bodegas and corner stores has a fundamentally different food access reality than one where 70% are grocery stores.
 
-**food_balance_ratio** — SNAP grocery stores per 10k divided by fast food restaurants per 10k plus one. Values above 1.0 indicate more grocery options than fast food. This term captures balance rather than penalizing fast food outright.
+**food_balance_ratio** — SNAP grocery stores per 10k divided by fast food restaurants per 10k plus one. Values above 1.0 indicate more grocery options than fast food. This term captures balance rather than penalizing fast food outright — the food balance ratio already encodes fast food's effect on the food environment.
 
 **year_round_markets** — Count of farmers markets operating year-round in the neighborhood. Seasonal markets are excluded because intermittent availability does not constitute reliable food access infrastructure.
 
@@ -103,7 +106,7 @@ Each neighborhood receives a score based on ten weighted variables. Higher score
 
 **pct_grade_A** — Percentage of inspected food establishments with a New York City Department of Health Grade A rating. This variable is specific to NYC's letter-grade inspection system and is not portable to analyses of other cities.
 
-**economic_access_gap** — An income-based affordability penalty ranging from 0 to 2. Neighborhoods with median household income above $100,000 receive no penalty. Neighborhoods below $35,000 receive the maximum penalty of 2.0.
+**economic_access_gap** — An income-based affordability penalty ranging from 0 to 2, weighted at −3.0 — the strongest penalty term in the formula alongside convenience ratio. Neighborhoods with median household income above $100,000 receive no penalty. Neighborhoods below $35,000 receive the maximum penalty of 2.0. This reflects the reality that physical proximity to food does not constitute access if residents cannot afford to shop there.
 
 ---
 
@@ -113,9 +116,9 @@ Access tiers are determined by back-calculating thresholds from defined archetyp
 
 | Tier | Score | Neighborhoods | Description |
 |---|---|---|---|
-| Food Desert | Below 25.2 | 7 | Critically low grocery access |
-| At Risk | 25.2 to 54.7 | 51 | Marginal access with measurable gaps |
-| Good Access | 54.7 and above | 58 | Adequate grocery density and quality |
+| Food Desert | Below 25.2 | 13 | Critically low grocery access |
+| At Risk | 25.2 to 54.7 | 46 | Marginal access with measurable gaps |
+| Good Access | 54.7 and above | 57 | Adequate grocery density and quality |
 
 Thresholds are placed at the midpoints between archetype scores rather than set arbitrarily or percentile-based. A neighborhood's classification reflects its actual food access conditions, not its position in the citywide distribution.
 
@@ -131,7 +134,7 @@ The USDA SNAP retailer database frequently classifies halal markets, carnecerias
 
 ## Known Limitations
 
-- **SNAP data excludes high-end grocers** — Whole Foods, Trader Joe's, and specialty food stores are not SNAP-authorized, causing some high-income neighborhoods to score lower than intuition suggests. Non-SNAP stores are partially captured through the NY State grocery dataset but may still be underrepresented.
+- **SNAP data excludes high-end grocers** — Whole Foods, Trader Joe's, and specialty food stores are not SNAP-authorized, causing some high-income neighborhoods to score lower than intuition suggests.
 - **Farmers market seasonal duplicates** — The DOHMH dataset lists some markets multiple times across seasons. The year_round_markets count is more reliable than total_farmers_markets.
 - **Grade A inspections are NYC-specific** — The DOHMH letter grade system does not exist in most US cities. This variable contributes minimally to the score (weight 0.2) and would need to be replaced for any adaptation to another geography.
 - **Fast food identification relies on cuisine description** — Restaurant inspection records identify fast food by cuisine type, which may undercount some chains listed generically.

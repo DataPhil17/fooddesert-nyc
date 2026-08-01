@@ -15,19 +15,19 @@ This analysis examines food access across **116 New York City neighborhoods** us
 <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin: 24px 0;">
 
 <div style="background:#EDE6DC; border:1px solid #C4B49A; border-left: 4px solid #CC3311; border-radius:8px; padding:20px;">
-  <div style="font-size:36px; font-weight:700; color:#CC3311;">7</div>
+  <div style="font-size:36px; font-weight:700; color:#CC3311;">13</div>
   <div style="font-size:14px; color:#4A3828; font-weight:600; margin-top:4px;">Food Desert Neighborhoods</div>
   <div style="font-size:12px; color:#6B5C48; margin-top:6px;">Score below 25.2 — critically low grocery access</div>
 </div>
 
 <div style="background:#EDE6DC; border:1px solid #C4B49A; border-left: 4px solid #EE7733; border-radius:8px; padding:20px;">
-  <div style="font-size:36px; font-weight:700; color:#EE7733;">51</div>
+  <div style="font-size:36px; font-weight:700; color:#EE7733;">46</div>
   <div style="font-size:14px; color:#4A3828; font-weight:600; margin-top:4px;">At Risk Neighborhoods</div>
   <div style="font-size:12px; color:#6B5C48; margin-top:6px;">Score 25.2–54.7 — marginal access with measurable gaps</div>
 </div>
 
 <div style="background:#EDE6DC; border:1px solid #C4B49A; border-left: 4px solid #0077BB; border-radius:8px; padding:20px;">
-  <div style="font-size:36px; font-weight:700; color:#0077BB;">58</div>
+  <div style="font-size:36px; font-weight:700; color:#0077BB;">57</div>
   <div style="font-size:14px; color:#4A3828; font-weight:600; margin-top:4px;">Good Access Neighborhoods</div>
   <div style="font-size:12px; color:#6B5C48; margin-top:6px;">Score above 54.7 — adequate grocery density and quality</div>
 </div>
@@ -71,5 +71,5 @@ Thresholds separating Food Desert, At Risk, and Good Access tiers are back-calcu
 *Use the navigation to explore the methodology, findings, interactive map, and intervention analysis.*
 
 <div style="font-size:11px; color:#9C8C78; margin-top:16px;">
-  Car ownership statistic: U.S. Census Bureau, American Community Survey 2024 1-Year Estimates, via Bloomberg City Lab (September 2025).
+Car ownership statistic: U.S. Census Bureau, American Community Survey 2024 1-Year Estimates, via Bloomberg City Lab (September 2025).
 </div>

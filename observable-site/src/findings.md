@@ -12,6 +12,8 @@ Neighborhoods are ranked by Food Access Score within each borough. The highest-s
 
 The lowest-scoring neighborhoods — Breezy Point, Eltingville, Floral Park, Bayside, and Throggs Neck — are predominantly lower-density, outer-borough communities with sparse grocery infrastructure and high rates of car dependence.
 
+Of 116 scored neighborhoods, 13 qualify as Food Deserts, 46 are At Risk, and 57 have Good Access.
+
 ![Food Access Score Rankings](./q1_food_access_score.png)
 
 ---
@@ -28,9 +30,13 @@ Murray Hill illustrates this paradox most clearly. With a median household incom
 
 ## Q3: What variables drive food desert classification?
 
-Examining average metric values across the three access tiers reveals several important patterns. Good Access neighborhoods have significantly higher SNAP grocery density per capita. The poverty rate finding is counterintuitive but methodologically sound: dense immigrant neighborhoods have both high poverty rates and dense grocery infrastructure.
+Examining average metric values across the three access tiers reveals several important patterns.
 
-The economic access gap chart shows that Food Desert neighborhoods have lower affordability penalties on average — because most Food Desert neighborhoods are higher-income outer-borough communities where income is not the limiting factor. Access to food is constrained by physical infrastructure, not purchasing power.
+Good Access neighborhoods have significantly higher SNAP grocery density per capita — 5.85 stores per 10,000 residents on average compared to 1.09 for Food Desert neighborhoods. The convenience store percentage is counterintuitively highest in Good Access neighborhoods, but this reflects that dense neighborhoods have more total SNAP retailers overall — the absolute grocery count still dominates.
+
+The poverty rate finding is striking: Food Desert neighborhoods have higher average median incomes than Good Access neighborhoods. This is because most Food Desert neighborhoods in our analysis are suburban, car-dependent outer-borough communities with lower poverty but sparse grocery infrastructure. Dense immigrant neighborhoods have both high poverty rates and dense grocery infrastructure — the opposite of what the USDA's income-based definition assumes.
+
+The economic access gap shows that Food Desert neighborhoods have lower affordability barriers on average because they tend to be higher-income — but their physical grocery access is poor. Good Access neighborhoods face higher affordability pressure but have abundant physical options nearby.
 
 ![Score Component Analysis](./q3_score_components.png)
 
@@ -40,7 +46,9 @@ The economic access gap chart shows that Food Desert neighborhoods have lower af
 
 Borough-level analysis uses population-weighted averages to account for the fact that boroughs contain very different numbers of neighborhoods — Queens has 40 neighborhoods in this analysis while the Bronx has 19.
 
-The Bronx scores highest on SNAP grocery density, driven by the concentration of ethnic grocery stores in neighborhoods like Fordham, Norwood, Highbridge, and University Heights. Queens shows the highest internal variation of any borough, spanning from some of the highest-scoring neighborhoods (Jackson Heights, Corona, Elmhurst) to five of the seven Food Desert neighborhoods.
+The Bronx scores highest on SNAP grocery density, driven by the concentration of ethnic grocery stores in neighborhoods like Fordham, Norwood, Highbridge, and University Heights. The ethnic grocery reclassification had a particularly strong effect in the Bronx, where many stores in dense immigrant commercial corridors were moved from the Convenience Store category to healthy retail.
+
+Queens shows the highest internal variation of any borough, containing both some of the highest-scoring neighborhoods (Jackson Heights, Corona, Elmhurst) and the most Food Desert neighborhoods of any borough. This reflects the geographic diversity of Queens — dense immigrant neighborhoods alongside sprawling low-density suburban communities.
 
 ![Borough Comparison](./q4_borough_comparison.png)
 
@@ -54,4 +62,4 @@ The Bronx scores highest on SNAP grocery density, driven by the concentration of
 | Dense immigrant neighborhoods score highest | Ethnic grocery infrastructure is systematically undercounted by standard classifications |
 | High-income neighborhoods can score as Food Deserts | SNAP-only analysis misses boutique and specialty food retail |
 | Queens has the most internal variation | Borough-level policy is too coarse — neighborhood-level targeting is necessary |
-| 536 additional stores needed citywide | Full remediation to Good Access requires substantial sustained investment |
+| 59 neighborhoods need intervention | Full remediation to Good Access requires sustained investment across 13 Food Deserts and 46 At Risk neighborhoods |

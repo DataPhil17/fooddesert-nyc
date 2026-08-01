@@ -11,7 +11,6 @@ export default {
   ],
 
   head: `
-    <link rel="icon" href="observable.png" type="image/png" sizes="32x32">
     <style>
       /* ── Earth tone / deep red color palette ───────────────── */
       :root {

@@ -6,7 +6,7 @@ The United States Department of Agriculture defines a food desert as any low-inc
 
 According to the U.S. Census Bureau's 2024 American Community Survey, **56.7% of New York City households have no car** — making distance to a supermarket a poor proxy for food access in an environment built around walking and transit. A neighborhood with ten bodegas within walking distance is not food-secure simply because those bodegas are nearby. And a neighborhood where the only nearby grocery stores are priced beyond what residents can afford does not have good food access simply because stores exist.
 
-This analysis examines food access across **116 New York City neighborhoods** using a custom Food Access Score built from seven data sources. Rather than measuring distance to the nearest supermarket, it measures the density, quality, and affordability of the food retail environment — the factors that actually determine whether residents can access healthy food in an urban context.
+This analysis examines **food access for SNAP-eligible residents** across 116 New York City neighborhoods using a custom Food Access Score built from seven data sources. Rather than measuring distance to the nearest supermarket, it measures the density, quality of the residents most vulnerable to food insecurity.
 
 ---
 

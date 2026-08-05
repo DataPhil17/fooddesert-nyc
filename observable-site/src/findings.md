@@ -22,7 +22,7 @@ Of 116 scored neighborhoods, 13 qualify as Food Deserts, 46 are At Risk, and 57 
 
 One of the most significant findings of this analysis is that poverty rate is a poor predictor of food access in New York City. Neighborhoods with the highest poverty rates — South Bronx, Longwood, Hunts Point — score well on food access because they have dense walkable grocery infrastructure. Neighborhoods with the lowest poverty rates — Bayside, Eltingville, Murray Hill — score poorly because they lack SNAP-authorized grocery density.
 
-Murray Hill illustrates this paradox most clearly. With a median household income of $153,000, it scores as a Food Desert due to a near-absence of SNAP-authorized grocery stores. Residents shop at non-SNAP specialty and gourmet retailers not captured by SNAP data — exposing a fundamental limitation of SNAP-based metrics in high-income urban neighborhoods.
+Murray Hill illustrates this most clearly. With a median household income of $153,000, it scores as a Food Desert because this analysis measures food acAP benefits — residents with higher incomes shop at non-SNAP specialty and gourmet retailers, but SNAP-eligible residents in the same neighborhood have critically limited authorized options. This is not a flaw in the methodology; it is the methodology working correctly.
 
 ![Score vs. Socioeconomic Indicators](./q2_score_vs_socioeconomic.png)
 

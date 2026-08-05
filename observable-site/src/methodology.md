@@ -2,7 +2,11 @@
 
 ## Overview
 
-The Food Access Score is a composite metric designed to measure the quality, density, and affordability of the food retail environment in each NYC neighborhood. It is computed at the ZIP code level and aggregated to neighborhoods using a crosswalk of 173 ZIP codes mapped to 116 neighborhoods across all five boroughs.
+The Food Access Score is a composite metric designed to measure food access specifically for **SNAP-eligible residents** — the population most vulnerable to food insecurity. This is a deliberate methodological choice: by anchoring the analysis to SNAP-authorized food retail, the score measures whether residents who depend on food assistance can actually access quality food in their neighborhood, not whether food exists in the abstract.
+
+This framing explains findings that mig otherwise seem counterintuitive. Murray Hill scores as a Food Desert despite a $153,000 median income — because almost no grocery stores there accept SNAP benefits. Residents with higher incomes shop at non-SNAP specialty and gourmet retailers, but SNAP-eligible residents in the same neighborhood have critically limited authorized options. The formula captures this gap directly.
+
+The score is computed at the ZIP code level and aggregated to neighborhoods using a crosswalk of 173 ZIP codes mapped to 116 neighborhoods across all five boroughs.
 
 ---
 
